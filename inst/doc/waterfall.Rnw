@@ -1,0 +1,42 @@
+\documentclass[12pt,letterpaper]{article}
+
+\usepackage[style=chicago-footnote-sr]{biblatex}
+\usepackage[none]{hyphenat}
+\usepackage{setspace}
+\usepackage{mathptmx}
+
+\raggedright
+\doublespacing
+
+\setlength{\oddsidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{-.5in}
+\setlength{\textheight}{9.25in}
+\setlength{\footskip}{.25in}
+\parindent .5in
+
+\title{Waterfall Charts in R}
+\author{James P. Howard, II}
+\date{$Date: 2008-05-27 10:01:49 -0400 (Tue, 27 May 2008) $}
+
+\bibliography{waterfall}
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+
+\section{Extended Example}
+
+\section{Rationale}
+
+\section{Implementation}
+
+\section{Evaluation}
+
+\section{Conclusion}
+
+\clearpage
+\printbibliography
+
+\end{document}
