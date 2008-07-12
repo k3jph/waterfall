@@ -85,7 +85,14 @@ origin = 0, ...)
 }
 
 \references{
-  FIXME
+  James Howard, FIXME.
+  
+  Andrew Jaquith, \emph{Security Metrics: Replacing Fear, Uncertainty,
+    and Doubt} (Boston:  Addison-Wesley Professional, 2007), 170-172.
+ 
+  Ethan M. Rasiel, \emph{The McKinsey Way: Using the Techniques of the
+    World's Top Strategic Consultants to Help You and Your Business}
+  (New York:  McGraw-Hill, 1999), 113-118.   
 }
 
 \seealso{
