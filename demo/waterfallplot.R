@@ -1,2 +1,2 @@
 data(rasiel)
-waterfallplot(rasiel$values, names.arg=rasiel$label)
+waterfallplot(rasiel$value, names.arg=rasiel$label)
