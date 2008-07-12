@@ -1,6 +1,6 @@
 #  This is the makefule for the Waterfall documentation
 
-all: display
+all: pdf
 
 clean: 
 	$ rm -rf *.pdf *.ps *.dvi *.aux *.bbl *.log *.blg *.tex *-blx.bib

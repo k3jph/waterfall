@@ -1,6 +1,11 @@
+##
+##
+##
+
 .First.lib <-
-    function(libname, pkgname, ...) {
-        
-        # Preload the Lattice library
+function(libname, pkgname, ...) {
+    if (is.R()) {
         library(package = "lattice")
+        return(TRUE)
     }
+}
