@@ -135,7 +135,7 @@ waterfallplot(height, ...)
 \details{
   This function closely mimics the \link{barplot} interface, but
   provides a type of chart called a waterfall plot, showing how multiple
-  subvalues contirbute to a total sum.
+  subvalues contribute to a total sum.
   
   This is a generic function, it currently only has a default method. A
   formula interface may be added eventually.

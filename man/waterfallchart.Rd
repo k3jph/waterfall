@@ -77,11 +77,15 @@ origin = 0, ...)
 \details{
   This function closely mimics the \link{barchart} interface, but
   provides a type of chart called a waterfall plot, showing how multiple
-  subvalues contirbute to a total sum.
+  subvalues contribute to a total sum.
   
   The bulk of the work is actually processed in \link{bwplot} which
   defines where tickmarks and other information outside the plot
   itself.  Only a formula method is provided.
+
+  Matrix and vector interfaces are not provided because mimicing the
+  behavior of \link{barchart} for those interfaces produces unintellible
+  and undefined graphic output.
 }
 
 \references{
