@@ -1,7 +1,7 @@
 \name{waterfallplot}
 \alias{waterfallplot}
 \alias{waterfallplot.default}
-\title{Waterfall Charts in R}
+\title{Waterfall Charts in R using traditional graphics}
 
 \description{Creates a waterfall plot with vertical or horizontal bars.} 
 
