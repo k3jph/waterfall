@@ -7,7 +7,7 @@ graphics}
 
 \details{This package contains a collection of graphical utilities and
   sample data for demonstration.  For a complete list, use
-  \code{library(help="waterfall")}.
+  \code{library(help="waterfall")}}.
 
 \author{James Howard <jh@jameshoward.us>}
 
