@@ -1,8 +1,21 @@
+##  $Id$
 ##
+##  This program is free software: you can redistribute it and/or modify
+##  it under the terms of the GNU General Public License as published by
+##  the Free Software Foundation, either version 3 of the License, or
+##  (at your option) any later version.
 ##
+##  This program is distributed in the hope that it will be useful,
+##  but WITHOUT ANY WARRANTY; without even the implied warranty of
+##  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+##  GNU General Public License for more details.
 ##
+##  You should have received a copy of the GNU General Public License
+##  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-##  Use the internal Lattice functions for keeping track of options.
+##  This file is largely based on bwplot.R, part of the Lattice package
+##  for R.  Use the internal Lattice functions for keeping track of
+##  options.
 lattice.options(panel.waterfallchart = "panel.waterfallchart")
 lattice.options(prepanel.waterfallchart = "prepanel.waterfallchart")
 lattice.options(waterfallchart.summaryname = "Total")
@@ -34,6 +47,7 @@ function (x, y, box.ratio = 1, box.width = box.ratio/(1 + box.ratio),
     grplst <- sort(unique(groups))
     baseline <- rep(origin, (l = length(x) + length(grplst)) +
         1)
+
     ##  The following block of code reorganizes the data into the final
     ##  format.  The same block is used above.
     if (horizontal) {
@@ -167,7 +181,7 @@ function (x, data = NULL, groups = NULL, horizontal = FALSE,
     ccall$box.ratio <- box.ratio
 
     ## Let lattice do the hard work
-    ccall[[1]] <- quote(bwplot) 
+    ccall[[1]] <- quote(bwplot)
     ans <- eval.parent(ccall)
     ans$call <- ocall
     ans
