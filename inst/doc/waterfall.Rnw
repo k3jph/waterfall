@@ -1,3 +1,7 @@
+%%  $Id$
+%%  
+%% 
+
 \documentclass[12pt,letterpaper]{article}
 
 \usepackage[style=chicago-footnote-sr]{biblatex}
@@ -24,10 +28,23 @@
 
 \begin{document}
 \maketitle
-
+<<label=startup,include=FALSE,echo=FALSE>>=
+library('waterfall')
+data(jaquith)
+data(rasiel)
+@
+<<label=rasielplot,include=FALSE,echo=FALSE>>=
+waterfallplot(rasiel$value, names.arg=rasiel$label)                                            
+@
 \section{Introduction}
 
 \section{Extended Example}
+A picture:
+\begin{center}
+<<label=rp,fig=TRUE,echo=FALSE>>=
+<<rasielplot>>
+@
+\end{center}
 
 \section{Rationale}
 

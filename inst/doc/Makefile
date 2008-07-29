@@ -1,9 +1,11 @@
-#  This is the makefule for the Waterfall documentation
+#  $Id$
+#
+#  This is the makefile for the Waterfall documentation
 
 all: pdf
 
 clean: 
-	$ rm -rf *.pdf *.ps *.dvi *.aux *.bbl *.log *.blg *.tex *-blx.bib
+	$ rm -rf *.pdf *.ps *.dvi *.aux *.bbl *.log *.blg *.tex *-blx.bib *.eps
 
 display: waterfall.pdf 
 	$ xpdf waterfall.pdf
