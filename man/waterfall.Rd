@@ -1,5 +1,6 @@
 \name{waterfall-package}
 \alias{waterfall}
+\docType{package}
 \title{Waterfall Charts in R}
 
 \description{Creates waterfall charts in R using traditional and lattice
