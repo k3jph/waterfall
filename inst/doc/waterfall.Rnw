@@ -34,8 +34,14 @@ data(jaquith)
 data(rasiel)
 @
 <<label=rasielplot,include=FALSE,echo=FALSE>>=
-waterfallplot(rasiel$value, names.arg=rasiel$label)                                            
+waterfallplot(rasiel$value, names.arg=rasiel$label)
 @
+<<label=rasielchart,include=FALSE,echo=FALSE>>=
+waterfallchart(value~label, data=rasiel, groups=subtotal)
+@ 
+<<label=jaquithchart,include=false,echo=FALSE>>=
+waterfallchart(factor~score, data=jaquith)
+@ 
 \section{Introduction}
 
 \section{Extended Example}
