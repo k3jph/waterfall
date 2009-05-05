@@ -23,5 +23,5 @@ waterfall.aux: waterfall.tex
 bibtex waterfall.bbl: waterfall.bib
 	$ bibtex waterfall
 
-waterfall.tex: waterfall.Rnw
-	$ R CMD Sweave waterfall.Rnw
+waterfall.tex: waterfall.rnw
+	$ R CMD Sweave waterfall.rnw

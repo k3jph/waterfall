@@ -41,7 +41,7 @@ waterfallplot(rasiel$value, names.arg=rasiel$label)
 \section{Extended Example}
 A picture:\autocite{rasiel:1999}
 
-\setkeys{Gin}{width=0.4\textwidth}
+%%\setkeys{Gin}{width=0.4\textwidth}
 \begin{figure}
 \centering  
 <<label=waterfallplot-rasiel,fig=TRUE,echo=FALSE>>=
