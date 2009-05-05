@@ -40,11 +40,16 @@ waterfallplot(rasiel$value, names.arg=rasiel$label)
 
 \section{Extended Example}
 A picture:\autocite{rasiel:1999}
-\begin{center}
+
+\setkeys{Gin}{width=0.4\textwidth}
+\begin{figure}
+\centering  
 <<label=waterfallplot-rasiel,fig=TRUE,echo=FALSE>>=
 <<rasielplot>>
 @
-\end{center}
+\caption{Rasiel's Sample}
+\label{fig:rasielplot}
+\end{figure}
 
 \section{Rationale}
 
