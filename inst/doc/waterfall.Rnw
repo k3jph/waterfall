@@ -4,13 +4,13 @@
 
 \documentclass[12pt,letterpaper]{article}
 
-\usepackage[style=chicago-footnote-sr]{biblatex}
-\usepackage[none]{hyphenat}
-\usepackage{setspace}
-\usepackage{mathptmx}
+\usepackage[style=verbose-trad1]{biblatex}
+%% \usepackage[none]{hyphenat}
+%% \usepackage{setspace}
+%% \usepackage{mathptmx}
 
 \raggedright
-\doublespacing
+%% \doublespacing
 
 \setlength{\oddsidemargin}{0in}
 \setlength{\textwidth}{6.5in}
@@ -39,9 +39,9 @@ waterfallplot(rasiel$value, names.arg=rasiel$label)
 \section{Introduction}
 
 \section{Extended Example}
-A picture:
+A picture:\autocite{rasiel:1999}
 \begin{center}
-<<label=rp,fig=TRUE,echo=FALSE>>=
+<<label=waterfallplot-rasiel,fig=TRUE,echo=FALSE>>=
 <<rasielplot>>
 @
 \end{center}
@@ -55,6 +55,6 @@ A picture:
 \section{Conclusion}
 
 \clearpage
-\printbibliography
+%% \printbibliography
 
 \end{document}

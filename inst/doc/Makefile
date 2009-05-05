@@ -10,14 +10,12 @@ clean:
 display: waterfall.pdf 
 	$ xpdf waterfall.pdf
 
-pdf waterfall.pdf: waterfall.ps
-	$ ps2pdf waterfall.ps
+pdf waterfall.pdf: waterfall.tex waterfall.aux bibtex
+	$ latex waterfall.tex
+	$ pdflatex waterfall.tex
 
 postscript ps waterfall.ps: waterfall.dvi
 	$ dvips -o waterfall.ps waterfall.dvi
-
-dvi waterfall.dvi: waterfall.aux waterfall.bbl
-	$ latex waterfall.tex && latex waterfall.tex
 
 waterfall.aux: waterfall.tex
 	$ latex waterfall.tex
