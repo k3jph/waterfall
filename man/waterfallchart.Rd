@@ -26,7 +26,7 @@ origin = 0, ...)
 
   \item{data}{
     a data frame containing values (or more precisely, anything that is
-    a valid 'envir' argument in 'eval', e.g. a list or an environment)
+    a valid 'envir' argument in 'eval', e.g., a list or an environment)
     for any variables in the formula, as well as 'groups' and 'subset'
     if applicable. If not found in 'data', or if 'data' is unspecified,
     the variables are looked for in the environment of the formula.
