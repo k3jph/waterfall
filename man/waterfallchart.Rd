@@ -81,7 +81,7 @@ origin = 0, ...)
   
   The bulk of the work is actually processed in \link{bwplot} which
   defines where tickmarks and other information outside the plot
-  itself.  Only a formula method is provided.
+  itself are placed.  Only a formula method is provided.
 
   Matrix and vector interfaces are not provided because mimicing the
   behavior of \link{barchart} for those interfaces produces unintellible
