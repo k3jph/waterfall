@@ -5,12 +5,10 @@
 \documentclass[12pt,letterpaper]{article}
 
 \usepackage[style=verbose-trad1]{biblatex}
-%% \usepackage[none]{hyphenat}
-%% \usepackage{setspace}
-%% \usepackage{mathptmx}
+\usepackage{setspace}
 
 \raggedright
-%% \doublespacing
+\doublespacing
 
 \setlength{\oddsidemargin}{0in}
 \setlength{\textwidth}{6.5in}
@@ -47,7 +45,7 @@ waterfallchart(factor~score, data=jaquith)
 \section{Extended Example}
 A picture:\autocite{rasiel:1999}
 
-%%\setkeys{Gin}{width=0.4\textwidth}
+\setkeys{Gin}{width=0.4\textwidth}
 \begin{figure}
 \centering  
 <<label=waterfallplot-rasiel,fig=TRUE,echo=FALSE>>=
@@ -66,6 +64,6 @@ A picture:\autocite{rasiel:1999}
 \section{Conclusion}
 
 \clearpage
-%% \printbibliography
+\printbibliography
 
 \end{document}
