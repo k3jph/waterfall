@@ -26,6 +26,8 @@
 \begin{document}
 \maketitle
 
+%% This section initializes the waterfall library and creates three
+%% graphs that will appear in throughout the document.
 <<label=startup,include=FALSE,echo=FALSE>>=
 library('waterfall')
 data(jaquith)
@@ -36,10 +38,11 @@ waterfallplot(rasiel$value, names.arg=rasiel$label)
 @
 <<label=rasielchart,include=FALSE,echo=FALSE>>=
 waterfallchart(value~label, data=rasiel, groups=subtotal)
-@ 
+@ v
 <<label=jaquithchart,include=false,echo=FALSE>>=
 waterfallchart(factor~score, data=jaquith)
 @ 
+
 \section{Introduction}
 
 \section{Extended Example}
