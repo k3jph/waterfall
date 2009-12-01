@@ -10,7 +10,7 @@ graphics}
   sample data for demonstration.  For a complete list, use
   \code{library(help="waterfall")}}.
 
-\author{James Howard <jh@jameshoward.us>}
+\author{James P. Howard, II <jh@jameshoward.us>}
 
 \keyword{hplot}
   

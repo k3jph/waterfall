@@ -147,7 +147,7 @@ waterfallplot(height, ...)
 }
 
 \references{
-  James Howard, FIXME.
+  James P. Howard, II, FIXME.
 
   Andrew Jaquith, \emph{Security Metrics: Replacing Fear, Uncertainty,
     and Doubt} (Boston:  Addison-Wesley Professional, 2007), 170-172.
