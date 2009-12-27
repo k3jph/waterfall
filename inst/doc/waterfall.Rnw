@@ -1,5 +1,5 @@
-%% $Id$
-%%  
+%% Copyright goes here later.
+%%
 %% \VignetteIndexEntry{Waterfall Charts in R}
 
 \documentclass[12pt,letterpaper]{article}
@@ -19,7 +19,6 @@
 
 \title{Waterfall Charts in R}
 \author{James P. Howard, II}
-\date{$Id$}
 
 \bibliography{waterfall}
 
