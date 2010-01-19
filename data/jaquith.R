@@ -1,5 +1,3 @@
-##  $Id$
-##
 ##  Andrew Jaquith, Security Metrics: Replacing Fear, Uncertainty, and
 ##  Doubt (Boston:  Addison-Wesley Professional, 2007), 170-172.
 

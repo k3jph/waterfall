@@ -1,5 +1,3 @@
-##  $Id$
-##
 ##  Ethan M. Rasiel, The McKinsey Way: Using the Techniques of the
 ##  World's Top Strategic Consultants to Help You and Your Business
 ##  (New York:  McGraw-Hill, 1999), 113-118.

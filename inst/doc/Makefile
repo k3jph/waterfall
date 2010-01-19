@@ -1,5 +1,3 @@
-#  $Id$
-#
 #  This is the makefile for the Waterfall documentation
 
 all: pdf
