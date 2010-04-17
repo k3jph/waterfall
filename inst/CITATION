@@ -10,7 +10,7 @@ vers <- paste("R package version", desc$Version)
 
 citEntry(entry="Manual",
          title = "Waterfall Charts in R",
-         author = personList(as.person("James P. Howard, II")),
+         author = personList(person(first = "James", middle="P.", last="Howard, II")),
          year = year,
          note = vers,
          textVersion = paste("James P. Howard, II, Waterfall Charts in R."))
