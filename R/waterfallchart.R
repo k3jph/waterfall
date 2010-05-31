@@ -21,11 +21,6 @@
 ## OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 ## SUCH DAMAGE.
 
-##  Use the internal Lattice functions for keeping track of options.
-lattice.options(panel.waterfallchart = "panel.waterfallchart")
-lattice.options(prepanel.waterfallchart = "prepanel.waterfallchart")
-lattice.options(waterfallchart.summaryname = "Total")
-
 `panel.waterfallchart` <-
 function (x, y, box.ratio = 1, box.width = box.ratio/(1 + box.ratio),
     horizontal = FALSE, origin = 0, reference = TRUE, groups = NULL,
@@ -175,7 +170,8 @@ UseMethod("waterfallchart")
 
 `waterfallchart.formula` <-
 function (x, data = NULL, groups = NULL, horizontal = FALSE,
-    panel = lattice.getOption("panel.waterfallchart"), prepanel = lattice.getOption("prepanel.waterfallchart"),
+    panel = lattice.getOption("panel.waterfallchart"), 
+	prepanel = lattice.getOption("prepanel.waterfallchart"),
     box.ratio = 2, origin = 0, ...)
 {
     ocall <- sys.call(sys.parent())
