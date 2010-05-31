@@ -21,9 +21,7 @@
 ## OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 ## SUCH DAMAGE.
 
-##  This file is largely based on bwplot.R, part of the Lattice package
-##  for R.  Use the internal Lattice functions for keeping track of
-##  options.
+##  Use the internal Lattice functions for keeping track of options.
 lattice.options(panel.waterfallchart = "panel.waterfallchart")
 lattice.options(prepanel.waterfallchart = "prepanel.waterfallchart")
 lattice.options(waterfallchart.summaryname = "Total")
