@@ -104,8 +104,7 @@ function (height, width = 1, space = NULL, names.arg = NULL,
         plot.window(xlim = xlim, ylim = ylim, ...)
         for (i in 1:l) rect(leftline[i], baseline[i], rightline[i],
             topline[i], density = density.vec[i], angle = angle.vec[i],
-            col = col.vec[i], border = border.vec[i], xpd = xpd,
-            ...)
+            col = col.vec[i], border = border.vec[i], xpd = xpd, ...)
         if (horiz == TRUE)
             for (i in 1:(l - 1)) lines(c(leftline[i], leftline[i]),
                 c(baseline[i], topline[i + 1]), ...)
@@ -116,8 +115,7 @@ function (height, width = 1, space = NULL, names.arg = NULL,
                 lty = axis.lty, cex.axis = cex.names, ...)
         if (axes == TRUE)
             axis(respaxis, cex.axis = cex.axis, ...)
-        title(main = main, sub = sub, xlab = xlab, ylab = ylab,
-            ...)
+        title(main = main, sub = sub, xlab = xlab, ylab = ylab, ...)
     }
     invisible(ticks.vec)
 }
