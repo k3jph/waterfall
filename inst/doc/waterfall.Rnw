@@ -1,71 +1,73 @@
 %% Copyright goes here later.
 %%
 %% \VignetteIndexEntry{Waterfall Charts in R}
+%% need no \usepackage{Sweave.sty}
 
-\documentclass[12pt,letterpaper]{article}
+\documentclass[codesnippet,nojss]{jss}
 
-\usepackage[style=verbose-trad1]{biblatex}
-\usepackage{setspace}
+\usepackage{thumbpdf}
+\usepackage{xspace}
 
-\raggedright
-\doublespacing
+\newcommand\base{\pkg{base}\xspace}
+\newcommand\ggplot{\pkg{ggplot2}\xspace}
+\newcommand\R{\proglang{R}\xspace}
+\newcommand\lattice{\pkg{lattice}\xspace}
+\newcommand\waterfall{\pkg{waterfall}\xspace}
 
-\setlength{\oddsidemargin}{0in}
-\setlength{\textwidth}{6.5in}
-\setlength{\topmargin}{-.5in}
-\setlength{\textheight}{9.25in}
-\setlength{\footskip}{.25in}
-\parindent .5in
+%% almost as usual
+\author{James P. Howard, II\\University of Maryland Baltimore County}
+\title{Waterfall Charts in \R}
 
-\title{Waterfall Charts in R}
-\author{James P. Howard, II}
+%% for pretty printing and a nice hypersummary also set:
+\Plainauthor{James P. Howard, II} %% comma-separated
+\Plaintitle{Waterfall Charts in R} %% without formatting
 
-\bibliography{waterfall}
+%% an abstract and keywords
+\Abstract{
+  Here should be the abstract.
+}
+\Keywords{waterfall charts, barplots, \R language}
+\Plainkeywords{waterfall charts, barplots, R language} 
+
+%% publication information
+%% NOTE: Typically, this can be left commented and will be filled out by the technical editor
+%% \Volume{13}
+%% \Issue{9}
+%% \Month{September}
+%% \Year{2004}
+%% \Submitdate{2004-09-29}
+%% \Acceptdate{2004-09-29}
+
+%% The address of (at least) one author should be given
+%% in the following format:
+\Address{
+  James P. Howard, II\\
+  University of Maryland Baltimore County\\
+  E-mail: \email{howard5@umbc.edu} \& \email{jh@jameshoward.us}\\
+  URL: \url{http://www.jameshoward.us}
+}
+%% end of declarations %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
-\maketitle
-
-%% This section initializes the waterfall library and creates three
-%% graphs that will appear in throughout the document.
-<<label=startup,include=FALSE,echo=FALSE>>=
-library('waterfall')
-data(jaquith)
-data(rasiel)
-@
-<<label=rasielplot,include=FALSE,echo=FALSE>>=
-waterfallplot(rasiel$value, names.arg=rasiel$label)
-@
-<<label=rasielchart,include=FALSE,echo=FALSE>>=
-waterfallchart(value~label, data=rasiel, groups=subtotal)
-@ v
-<<label=jaquithchart,include=false,echo=FALSE>>=
-waterfallchart(factor~score, data=jaquith)
-@ 
 
 \section{Introduction}
 
-\section{Extended Example}
-A picture:\autocite{rasiel:1999}
+\section{Related Work}
 
-\setkeys{Gin}{width=0.4\textwidth}
-\begin{figure}
-\centering  
-<<label=waterfallplot-rasiel,fig=TRUE,echo=FALSE>>=
-<<rasielplot>>
-@
-\caption{Rasiel's Sample}
-\label{fig:rasielplot}
-\end{figure}
+\section{Description}
 
-\section{Rationale}
+\subsection[The waterfallplot function]{The \code{waterfallplot} function}
+
+\subsection[The waterfallchart function]{The \code{waterfallchart} function}
 
 \section{Implementation}
 
 \section{Evaluation}
 
+\section{Status and Future Work}
+
 \section{Conclusion}
 
-\clearpage
-\printbibliography
+\bibliography{waterfall}
 
 \end{document}
