@@ -31,7 +31,7 @@
 				main = NA, sub = NA, xlab = NULL, ylab = NULL, xlim = NULL,
 				ylim = NULL, xpd = TRUE, axes = TRUE, axisnames = TRUE, cex.axis = par("cex.axis"),
 				cex.names = par("cex.axis"), plot = TRUE, axis.lty = 0, offset = 0,
-				add = FALSE, summary = FALSE, rev = FALSE, ...)
+				add = FALSE, summary = FALSE, rev = FALSE, level.lines = TRUE, ...)
 {
 	##  Set up the initial environment
 	respaxis <- 2
@@ -104,11 +104,12 @@
 		for (i in 1:l) rect(leftline[i], baseline[i], rightline[i],
 					topline[i], density = density.vec[i], angle = angle.vec[i],
 					col = col.vec[i], border = border.vec[i], xpd = xpd, ...)
-		if (horiz == TRUE)
-			for (i in 1:(l - 1)) lines(c(leftline[i], leftline[i]),
-						c(baseline[i], topline[i + 1]), ...)
-		else for (i in 1:(l - 1)) lines(c(rightline[i], leftline[i +
-												1]), c(topline[i], baseline[i + 1]), ...)
+		if (level.lines == TRUE)
+			if (horiz == TRUE)
+				for (i in 1:(l - 1)) lines(c(leftline[i], leftline[i]),
+							c(baseline[i], topline[i + 1]), ...)
+			else for (i in 1:(l - 1)) lines(c(rightline[i], leftline[i +
+											1]), c(topline[i], baseline[i + 1]), ...)
 		if (!is.null(names.arg) && axisnames)
 			axis(expaxis, at = ticks.vec, labels = names.arg,
 					lty = axis.lty, cex.axis = cex.names, ...)

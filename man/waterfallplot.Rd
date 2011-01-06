@@ -13,8 +13,8 @@ waterfallplot(height, ...)
               main=NA, sub=NA, xlab=NULL, ylab=NULL, xlim=NULL,
               ylim=NULL, xpd=TRUE, axes=TRUE, axisnames=TRUE,
               cex.axis=par("cex.axis"), cex.names=par("cex.axis"),
-              plot=TRUE, axis.lty=0, offset=0, add = FALSE,
-              summary=FALSE, rev=FALSE, ...)
+              plot=TRUE, axis.lty=0, offset=0, add=FALSE,
+              summary=FALSE, rev=FALSE, level.lines=TRUE, ...)
 }
 
 \arguments{
@@ -123,6 +123,11 @@ waterfallplot(height, ...)
 
   \item{rev}{reverse the order of columns?  Defaults to FALSE.}
 
+  \item{level.lines}{
+  	if FALSE, the lines connecting adjacent boxes are ommitted from
+  	the display.
+  }
+  
   \item{...}{
     arguments to be passed to/from other methods.  For the default
     method these can include further arguments (such as 'axes', 'asp'

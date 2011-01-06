@@ -28,7 +28,7 @@
 				border = if (is.null(groups)) plot.polygon$border else superpose.polygon$border,
 				lty = if (is.null(groups)) plot.polygon$lty else superpose.polygon$lty,
 				lwd = if (is.null(groups)) plot.polygon$lwd else superpose.polygon$lwd,
-				...)
+				level.lines = TRUE, ...)
 {
 	plot.polygon <- trellis.par.get("plot.polygon")
 	superpose.polygon <- trellis.par.get("superpose.polygon")
@@ -78,8 +78,9 @@
 					lwd = lwd, height = box.width, width = height,
 					just = c("left", "centre"))
 		}
-		for (i in 2:l - 1) panel.lines(y = c(i, i + 1), x = baseline[i +
-									1], col = border, lty = lty, lwd = lwd)
+		if (level.lines == TRUE)
+			for (i in 2:l - 1) panel.lines(y = c(i, i + 1), x = baseline[i +
+										1], col = border, lty = lty, lwd = lwd)
 	}
 	else {
 		data <- merge(data.frame(x, y, groups, groupsx = x)[order(groups,
@@ -108,8 +109,9 @@
 					lwd = lwd, width = box.width, height = height,
 					just = c("centre", "bottom"))
 		}
-		for (i in 2:l - 1) panel.lines(x = c(i, i + 1), y = baseline[i +
-									1], col = border, lty = lty, lwd = lwd)
+		if (level.lines == TRUE)
+			for (i in 2:l - 1) panel.lines(x = c(i, i + 1), y = baseline[i +
+										1], col = border, lty = lty, lwd = lwd)
 	}
 }
 

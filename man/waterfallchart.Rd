@@ -12,8 +12,8 @@ waterfallchart(x, data, ...)
 
 \method{waterfallchart}{formula}(x, data=NULL, groups=NULL,
 horizontal=FALSE, panel=lattice.getOption("panel.waterfallchart"),
-prepanel=lattice.getOption("prepanel.waterfallchart"), box.ratio = 2,
-origin = 0, ...) 
+prepanel=lattice.getOption("prepanel.waterfallchart"), box.ratio=2,
+origin = 0, level.lines=TRUE, ...) 
 }
 
 \arguments{
@@ -70,6 +70,11 @@ origin = 0, ...)
     Defaults to 0.
   }
 
+  \item{level.lines}{
+  	if FALSE, the lines connecting adjacent boxes are ommitted from
+  	the display.
+  }
+  
   \item{...}{further arguments}
   
 }
