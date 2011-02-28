@@ -3,7 +3,7 @@
 all: pdf
 
 clean: 
-	$ rm -rf *.pdf *.ps *.dvi *.aux *.bbl *.log *.blg *.tex *-blx.bib *.eps
+	$ rm -rf *.pdf *.ps *.dvi *.aux *.bbl *.log *.blg *.tex *-blx.bib *.eps *.out
 
 display: waterfall.pdf 
 	$ xpdf waterfall.pdf
@@ -20,6 +20,3 @@ waterfall.aux: waterfall.tex
 
 bibtex waterfall.bbl: waterfall.bib
 	$ bibtex waterfall
-
-waterfall.tex: waterfall.Rnw
-	$ R CMD Sweave waterfall.Rnw
