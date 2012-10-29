@@ -1,22 +1,27 @@
-#  This is the makefile for the Waterfall documentation
+#
+#
+#
 
-all: pdf
+LATEX	:= xelatex
+SWEAVE	:= R CMD Sweave
+BIBTEX	:= bibtex
+MKIDX	:= makeindex
+MKGLS	:= makeglossaries
 
-clean: 
-	$ rm -rf *.pdf *.ps *.dvi *.aux *.bbl *.log *.blg *.tex *-blx.bib *.eps *.out
+all: waterfall.pdf
 
-display: waterfall.pdf 
-	$ xpdf waterfall.pdf
+waterfall.pdf: waterfall.bcf waterfall.tex waterfall.bbl
+	$ $(LATEX) waterfall
+	$ $(LATEX) waterfall
 
-pdf waterfall.pdf: waterfall.tex waterfall.aux bibtex
-	$ latex waterfall.tex
-	$ pdflatex waterfall.tex
+waterfall.bbl: waterfall.tex Makefile
+	$ $(BIBTEX) waterfall
 
-postscript ps waterfall.ps: waterfall.dvi
-	$ dvips -o waterfall.ps waterfall.dvi
+waterfall.bcf: waterfall.tex Makefile
+	$ $(LATEX) waterfall
 
-waterfall.aux: waterfall.tex
-	$ latex waterfall.tex
+waterfall.tex: waterfall.Rnw Makefile
+	$ $(SWEAVE) waterfall
 
-bibtex waterfall.bbl: waterfall.bib
-	$ bibtex waterfall
+clean:
+	$ hg purge

@@ -3,19 +3,22 @@
 %% \VignetteIndexEntry{Waterfall Charts in R}
 %% need no \usepackage{Sweave.sty}
 
-\documentclass[codesnippet,nojss]{jss}
+\documentclass[article,nojss]{jss}
 
 \usepackage{thumbpdf}
 \usepackage{xspace}
+\usepackage{jph}
 
 \newcommand\base{\pkg{base}\xspace}
 \newcommand\ggplot{\pkg{ggplot2}\xspace}
 \newcommand\R{\proglang{R}\xspace}
 \newcommand\lattice{\pkg{lattice}\xspace}
 \newcommand\waterfall{\pkg{waterfall}\xspace}
+\newcommand\waterfallplot{\code{waterfallplot}\xspace}
+\newcommand\waterfallchart{\code{waterfallchart}\xspace}
 
 %% almost as usual
-\author{James P. Howard, II\\University of Maryland Baltimore County}
+\author{James P. Howard, II\\University of Maryland University College}
 \title{Waterfall Charts in \R}
 
 %% for pretty printing and a nice hypersummary also set:
@@ -26,48 +29,119 @@
 \Abstract{
   Here should be the abstract.
 }
-\Keywords{waterfall charts, barplots, \R language}
-\Plainkeywords{waterfall charts, barplots, R language} 
-
-%% publication information
-%% NOTE: Typically, this can be left commented and will be filled out by the technical editor
-%% \Volume{13}
-%% \Issue{9}
-%% \Month{September}
-%% \Year{2004}
-%% \Submitdate{2004-09-29}
-%% \Acceptdate{2004-09-29}
-
-%% The address of (at least) one author should be given
-%% in the following format:
+\Keywords{waterfall charts, barplots, financial charts, \R language}
+\Plainkeywords{waterfall charts, barplots, financial charts, R language}
 \Address{
-  James P. Howard, II\\
-  University of Maryland Baltimore County\\
-  E-mail: \email{howard5@umbc.edu} \& \email{jh@jameshoward.us}\\
-  URL: \url{http://www.jameshoward.us}
+  James P. Howard, II \\
+  University of Maryland University College \\
+  E-mail: \email{jh@jameshoward.us} \\
+  URL: \url{http://www.jameshoward.us} \\
+  Twitter: \href{http://twitter.com/howardjp}{\texttt{@howardjp}}
 }
 %% end of declarations %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Prime up R
+<<label=startup,include=FALSE,echo=FALSE>>=
+library('waterfall')
+data(jaquith)
+data(rasiel)
+@
+<<label=rasielplot,include=FALSE,echo=FALSE>>=
+waterfallplot(rasiel$value)
+@
+<<label=jaquithchart,include=false,echo=FALSE>>=
+waterfallchart(factor~score, data=jaquith)
+@
 
 \begin{document}
 
 \section{Introduction}
+The waterfall chart was originally introduced to the public by
+\citet[113--118]{rasiel:1999} as a way of illustrating the value of
+simple and understandable charts. These charts show how a collection of
+data points contribute to a summary total. Two common applications for
+waterfall charts come from financial data. The first takes a collection
+of financial panel data, such as a balance sheet, and shows how each
+component, such as different asset and liability classes, chance the
+final balance. The second uses financial time series data, such as
+annual profit-and-loss data for an organization, to demonstrate how
+changes year over year contribute to a final total, such as a net asset
+balance.
 
-\section{Related Work}
+\begin{figure}[htbp]
+\setkeys{Gin}{width=0.5\textwidth}
+\centering  
+<<label=rasielplot,fig=TRUE,echo=FALSE>>=
+<<rasielplot>>
+@
+\caption{\citet{rasiel:1999} sample for the Acme Widget Corporation
+illustrates the use of the \waterfallplot function.}
+\label{fig:rasielplot}
+\end{figure}
 
-\section{Description}
+A waterfall chart, such as figure~\ref{fig:rasielplot} itself is a
+specialized type of bar chart. However, each bar is displaced from the
+chart's $x$-axis by the sum of the prior bars. Additionally, the
+baseline of $bar_{n+1}$ is connected by a line to the topline of
+$bar_n$, to make the logical connection to the visual placement of the
+bars. It is possible to add a final bar representing the total or
+subtotal bars within the data. Otherwise, a waterfall chart can be
+augmented, colored, or visually enhanced almost anyway possible with a
+standard bar chart.
 
-\subsection[The waterfallplot function]{The \code{waterfallplot} function}
+However, there are some differences in use and design from standard bar
+charts. A standard bar chart permits multiple datasets to be visualized
+side-by-side by using different colored bars, as shown in
+figure~\ref{fig:multibarplot}. Such a figure with lines connecting bars
+would be visually disastrous as information from different datasets
+would overlap. It would not be unreasonable to connect different levels
+from a stacked bar chart, but the waterfall plotting tools in this
+package do not support this mode of operation. One advantage waterfall
+charts have over stacked bar charts is the ability to graphically
+display negative components in the sum.
 
-\subsection[The waterfallchart function]{The \code{waterfallchart} function}
+\begin{figure}[htbp]
+\setkeys{Gin}{width=0.5\textwidth}
+\centering
+<<label=multibarplot,fig=TRUE,echo=false>>=
+multi = c(1,2,2,4,3,6)
+dim(multi) <- c(2,3)
+barplot(multi, beside=TRUE)
+@
+\caption{A simple bar plot with multiple data sets}
+\label{fig:multibarplot}
+\end{figure}
 
-\section{Implementation}
+Waterfall charts are based on bar charts which have received some
+criticism. \citet[96--97]{tufte:2007} criticizes bar charts for
+providing highly-redundant information, such as the same figure up to
+six times. Waterfall charts are not immune to the same critiques. The
+partial sums are displayed in at least three different places for each
+graph: the topline, the next baseline, and the line connecting them.
+Additionally, this type of chart provides few opportunities to add new
+information by overlaying another graph type. This will be explored more
+in section \ref{sec:advanced}.
 
-\section{Evaluation}
+Unfortunately, the name ``waterfall chart'' may lead to some confusion.
+There are several other types of charts with this name. One type of
+chart from the engineering fields shows how blah and blah is commonly
+called a waterfall chart \citep{box:2003}. The type of waterfall chart described here is
+not related to these charts. However, this type of chart is not limited
+to financial applications. The \code{jasquith} dataset shows how this
+type of chart can be used like a Gannt chart, though it only works if
+the dependency tree does not branch.
 
-\section{Status and Future Work}
+Finally, it is worth noting these charts also go by the name ``McKinsey
+chart'' due to their popularity at McKinsey \& Company, a consultancy.
+
+\section[waterfall package description]{\waterfall package description}
 
 \section{Conclusion}
+
+\section*{Acknowledgements}
 
 \bibliography{waterfall}
 
 \end{document}
+
+w
