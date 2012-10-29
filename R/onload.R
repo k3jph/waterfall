@@ -23,7 +23,6 @@
 
 .onLoad <- function(libname, pkgname, ...) {
 	if (is.R()) {
-		require("lattice")
 		lattice.options(panel.waterfallchart = "panel.waterfallchart")
 		lattice.options(prepanel.waterfallchart = "prepanel.waterfallchart")
 		lattice.options(waterfallchart.summaryname = "Total")
