@@ -174,7 +174,7 @@
 		function (x, data = NULL, groups = NULL, horizontal = FALSE,
 				panel = lattice.getOption("panel.waterfallchart"), 
 				prepanel = lattice.getOption("prepanel.waterfallchart"),
-				box.ratio = 2, origin = 0, ...)
+				box.ratio = 2, origin = 0, level.lines = TRUE, ...)
 {
 	ocall <- sys.call(sys.parent())
 	ocall[[1]] <- quote(waterfallchart)
