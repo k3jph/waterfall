@@ -1,7 +1,7 @@
 Package:		waterfall
 Type:			Package
-Version:		0.9.9.20131103
-Date:			2012-10-30
+Version:		0.9.9.20131208
+Date:			2013-12-08
 Title:			Waterfall Charts in R
 Author:			James Howard <jh@jameshoward.us>
 Maintainer:		James Howard <jh@jameshoward.us>
