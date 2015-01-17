@@ -1,9 +1,0 @@
-[patterns]
-**.tex = native
-**.sty = native
-**.bib = native
-**.R = native
-**.Rd = native
-
-[repository]
-native = LF
