@@ -139,9 +139,7 @@
 #' waterfallplot(rasiel$value, names.arg=rasiel$label)
 #'
 #' @export
-waterfallplot <- function (height, ...) UseMethod("waterfallplot")
-
-waterfallplot.default <-
+waterfallplot <-
     function (height, width = 1, space = NULL, names.arg = NULL,
               horiz = FALSE, density = NULL, angle = 45, col = NULL, border = par("fg"),
               main = NA, sub = NA, xlab = NULL, ylab = NULL, xlim = NULL,

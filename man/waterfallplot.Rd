@@ -4,16 +4,17 @@
 \alias{waterfallplot}
 \title{Waterfall Plot}
 \usage{
-waterfallplot(height, ...)
+waterfallplot(height, width = 1, space = NULL, names.arg = NULL,
+  horiz = FALSE, density = NULL, angle = 45, col = NULL,
+  border = par("fg"), main = NA, sub = NA, xlab = NULL, ylab = NULL,
+  xlim = NULL, ylim = NULL, xpd = TRUE, axes = TRUE, axisnames = TRUE,
+  cex.axis = par("cex.axis"), cex.names = par("cex.axis"), plot = TRUE,
+  axis.lty = 0, offset = 0, add = FALSE, summary = FALSE, rev = FALSE,
+  level.lines = TRUE, ...)
 }
 \arguments{
 \item{height}{a vector of values describing the height of the bars
 that make up the plot.  Matrices are not supported.}
-
-\item{...}{arguments to be passed to other methods.  For the default
-method these can include further arguments (such as 'axes', 'asp' and
-'main') and graphical parameters (see 'par') which are passed to
-'plot.window()', 'title()' and 'axis'.}
 
 \item{width}{optional vector of bar widths.  Re-cycled to length the
 number of bars drawn.  Specifying a single value will have no visible
@@ -94,6 +95,11 @@ FALSE.}
 
 \item{level.lines}{if FALSE, the lines connecting adjacent boxes are
 ommitted from the display.}
+
+\item{...}{arguments to be passed to other methods.  For the default
+method these can include further arguments (such as 'axes', 'asp' and
+'main') and graphical parameters (see 'par') which are passed to
+'plot.window()', 'title()' and 'axis'.}
 }
 \value{
 A numeric vector say 'mp', giving the coordinates of

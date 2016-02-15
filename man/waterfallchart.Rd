@@ -4,13 +4,16 @@
 \alias{waterfallchart}
 \title{Waterfall Chart}
 \usage{
-waterfallchart(x, data, ...)
+waterfallchart(x, data = NULL, groups = NULL, horizontal = FALSE,
+  panel = panel.waterfallchart, prepanel = prepanel.waterfallchart,
+  summaryname = "Total", box.ratio = 2, origin = 0, level.lines = TRUE,
+  ...)
 }
 \arguments{
 \item{x}{a formula describing the form of conditioning plot. The
 formula is generally of the form 'y ~ x | g1 * g2 * ...', indicating
-that plots of 'y' (on the y axis) versus 'x' (on the x axis) should be
-produced conditional on the variables 'g1, g2, ...'. However, the
+that plots of 'y' (on the y axis) versus 'x' (on the x axis) should
+be produced conditional on the variables 'g1, g2, ...'. However, the
 conditioning variables 'g1,g2,...' may be omitted.}
 
 \item{data}{a data frame containing values (or more precisely,
@@ -20,16 +23,12 @@ and 'subset' if applicable. If not found in 'data', or if 'data' is
 unspecified, the variables are looked for in the environment of the
 formula.}
 
-\item{...}{further arguments.}
-
-\item{groups}{a variable or expression to be evaluated in the data
-frame specified by 'data', expected to act as a grouping variable
-within each panel, typically used to distinguish different groups by
-varying graphical parameters like color and line type.  Unlike with
-the \link{barchart} function, groups specifies where subtotals
-columns, should appear.  There is a subtotal created for each group
-specified.  If no groups are given, a summary column is still
-reported.}
+\item{groups}{a vector expected to act as a grouping variable within
+each panel, typically used to distinguish different groups by varying
+graphical parameters like color and line type.  Unlike with the
+\link{barchart} function, groups specifies where subtotals columns,
+should appear.  There is a subtotal created for each group specified.
+If no groups are given, a summary column is still reported.}
 
 \item{horizontal}{This argument is used to process the arguments to
 these high level functions, but more importantly, it is passed as an
@@ -42,6 +41,8 @@ the difficult work of processing the formula.}
 \item{prepanel}{This function returns the \link{bwplot} information
 on the number of columns to display and where to place labels.}
 
+\item{summaryname}{name of the summary column, usually "Total"}
+
 \item{box.ratio}{specifies the ratio of the width of the rectangles
 to the interrectangle space.}
 
@@ -51,6 +52,8 @@ summary column.  Defaults to 0.}
 
 \item{level.lines}{if FALSE, the lines connecting adjacent boxes are
 ommitted from the display.}
+
+\item{...}{further arguments.}
 }
 \description{
 Creates a waterfall chart using Lattice
@@ -59,7 +62,7 @@ Creates a waterfall chart using Lattice
 This function closely mimics the \link{barchart} interface, but
 provides a type of chart called a waterfall plot, showing how
 multiple subvalues contribute to a total sum.
- 
+
 The bulk of the work is actually processed in \link{bwplot} which
 defines where tickmarks and other information outside the plot itself
 are placed.  Only a formula method is provided.
@@ -67,12 +70,11 @@ are placed.  Only a formula method is provided.
 Matrix and vector interfaces are not provided because mimicing the
 behavior of \link{barchart} for those interfaces produces
 unintellible and undefined graphic output.
-#'
 }
 \examples{
 data(rasiel)
 data(jaquith)
-waterfallchart(value~label, data=rasiel, groups=subtotal)
+waterfallchart(value~label, data=rasiel, groups=rasiel$subtotal)
 waterfallchart(factor~score, data=jaquith)
 
 }
