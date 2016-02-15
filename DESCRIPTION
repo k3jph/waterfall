@@ -1,7 +1,7 @@
 Package: waterfall
 Type: Package
 Title: Waterfall Charts
-Version: 0.9.9.20131208
+Version: 0.9.20160215
 Date: 2013-12-08
 Authors@R: person(given = "James P.", family = "Howard, II",
                           email = "jh@jameshoward.us", role = c("aut", "cre"))
@@ -13,3 +13,4 @@ Description: This package provides support for creating waterfall charts in R us
 License: BSD_2_clause + file LICENSE
 LazyData: yes
 RoxygenNote: 5.0.1
+Depends: lattice
