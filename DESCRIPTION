@@ -1,0 +1,16 @@
+Package: waterfall
+Type: Package
+Title: Waterfall Charts
+Version: 1.0.0
+Date: 2016-02-15
+Authors@R: person(given = "James P.", family = "Howard, II",
+                          email = "jh@jameshoward.us", role = c("aut", "cre"))
+URL: https://jameshoward.us/software/waterfall/,
+         https://github.com/howardjp/waterfall
+BugReports: https://github.com/howardjp/waterfall/issues
+Description: This package provides support for creating waterfall charts in R using
+			 both traditional base and lattice graphics.
+License: BSD_2_clause + file LICENSE
+LazyData: yes
+RoxygenNote: 5.0.1
+Depends: lattice
