@@ -1,6 +1,6 @@
 # Waterfall Charts in R
 
-[![Downloads from the RStudio CRAN mirror](http://cranlogs.r-pkg.org/badges/phonics)](http://cran.rstudio.com/package=phonics)
+[![Downloads from the RStudio CRAN mirror](http://cranlogs.r-pkg.org/badges/waterfall)](http://cran.rstudio.com/package=waterfall)
 
 This package provides support for creating waterfall charts in R using
 both traditional base and lattice graphics.
