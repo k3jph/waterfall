@@ -36,7 +36,7 @@
 #' number of bars drawn.  Specifying a single value will have no visible
 #' effect unless 'xlim' is specified.
 #'
-#' @param space 
+#' @param space
 #'    the amount of space (as a fraction of the average bar width)
 #'    left before each bar.  May be given as a single number or one number
 #'    per bar.  If not given explicitly, it defaults to 0.2.
@@ -59,7 +59,7 @@
 #'
 #' @param col a vector of colors for the bars or bar components. By
 #' default, grey is used.
-#'  
+#'
 #' @param border the color to be used for the border of the bars. Use
 #' 'border = NA' to omit borders.  If there are shading lines, 'border =
 #' TRUE' means use the same colour for the border as forr the shading
@@ -77,7 +77,7 @@
 #'
 #' @param axes logical.  If 'TRUE', a vertical (or horizontal, if
 #' 'horiz' is true) axis is drawn.
-#'  
+#'
 #' @param axisnames logical.  If 'TRUE', and if there are 'names.arg'
 #' (see above), the other axis is drawn (with 'lty=0') and labeled.
 #'
@@ -95,7 +95,7 @@
 #'
 #' @param add logical specifying if bars should be added to an already
 #' existing plot; defaults to 'FALSE'.
-#'  
+#'
 #' @param summary create a summary column.  A summary column provides a
 #' final sum column showing the relative change from the offset.  If a
 #' summary is requested and names.arg is set, the names.arg vector must
@@ -106,7 +106,7 @@
 #'
 #' @param level.lines if FALSE, the lines connecting adjacent boxes are
 #' ommitted from the display.
-#'  
+#'
 #' @param ...  arguments to be passed to other methods.  For the default
 #' method these can include further arguments (such as 'axes', 'asp' and
 #' 'main') and graphical parameters (see 'par') which are passed to
@@ -137,6 +137,14 @@
 #' @examples
 #' data(rasiel)
 #' waterfallplot(rasiel$value, names.arg=rasiel$label)
+#'
+#' @importFrom graphics par
+#' @importFrom graphics plot.new
+#' @importFrom graphics plot.window
+#' @importFrom graphics rect
+#' @importFrom graphics lines
+#' @importFrom graphics axis
+#' @importFrom graphics title
 #'
 #' @export
 waterfallplot <-
@@ -170,7 +178,7 @@ waterfallplot <-
 		col <- "grey"
 	col.vec <- rep(col, l, length.out = l)
 	border.vec <- rep(border, l, length.out = l)
-	
+
 	##  Assemble the baseline and topline vectors.  Default the spacing
 	##  between bars to 1/5 of the average bar width.  Create the same
 	##  initial offset as present in barplot()
@@ -188,7 +196,7 @@ waterfallplot <-
 		leftline[i + 1] <- rightline[i] + space.vec[i + 1]
 	}
 	ticks.vec = rep(0, times = l)
-	
+
 	##  Wait, do we need to turns this on its side?  Barplot uses an
 	##  internal function that rearranges the order of arguments.  This is
 	##  a bit less hassle to do it once, though the line drawing functions
