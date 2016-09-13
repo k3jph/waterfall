@@ -13,6 +13,7 @@ both traditional base and lattice graphics.
 
 * Use [GitFlow](http://nvie.com/posts/a-successful-git-branching-model/)
 * Document functions using [roxygen2](https://github.com/yihui/roxygen2)
+* Use [ZenHub](https://www.zenhub.com/) for project management on GitHub
 
 ## For more information
 
