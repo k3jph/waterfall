@@ -170,8 +170,18 @@ waterfallplot <-
 	}
 	if (!is.null(names.arg) && length(names.arg) != l)
 		stop("incorrect number of names")
-	if (!is.null(names(height)))
-		names.arg <- names(height)
+	if (!is.null(names(height))){
+	  # if names.arg is present, use it (don't overwrite)
+	  # otherwise, use the names attribute of height
+	  if (is.null(names.arg)) {
+	    names.arg <- names(height)
+	  }
+
+	  # let the rev argument drive the order of names.arg
+	  if (rev == TRUE) {
+	    names.arg <- rev(names.arg)
+	  }
+    }
 	density.vec <- rep(density, l, length.out = l)
 	angle.vec <- rep(angle, l, length.out = l)
 	if (is.null(col))
